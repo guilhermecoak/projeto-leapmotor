@@ -74,7 +74,7 @@ Configs que funcionaram bem pra mim:
 
 ## Segurança
 
-Eu rodo atrás de Tailscale, então nunca exponho publicamente. O token é pra evitar que qualquer device no Tailscale mande pontos — não substitui HTTPS se for expor na internet.
+Eu rodo atrás de Tailscale, então nunca exponho publicamente. O token é pra evitar que qualquer device no Tailscale mande pontos, não substitui HTTPS se for expor na internet.
 
 Se for colocar público, bota atrás de um reverse proxy com TLS (nginx + certbot, Caddy, etc) e dobra a atenção no token.
 
