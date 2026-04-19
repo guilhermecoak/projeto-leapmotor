@@ -1,0 +1,15 @@
+services:
+  gps-api:
+    build: .
+    container_name: gps-api
+    restart: unless-stopped
+    environment:
+      - GPS_TOKEN=${GPS_TOKEN}
+      - NTFY_TOPIC=${NTFY_TOPIC}
+      - DB_PATH=/data/gps.sqlite
+    volumes:
+      - ./data:/data
+    ports:
+      # bind na interface do tailscale pra não expor publicamente
+      # se quiser expor, troca por "8000:8000" e bota um proxy TLS na frente
+      - "${BIND_ADDR:-0.0.0.0}:8000:8000"
